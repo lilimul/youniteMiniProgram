@@ -1,0 +1,369 @@
+/**index.wxss**/
+
+.homeNavi{
+ color:white;
+}
+page{
+  background-color: #6D6AEF;
+}
+.homeNavi>.cu-custom{
+background-color: rgb(109, 106, 239);
+}
+.sbtn{
+  width:75px !important;
+  height:100%;
+  right: 0px;
+  float: right;
+  background-color: rgb(109, 106, 239) !important;
+  color:white;
+}
+.cu-bar{
+  border-radius: 0 0 15px 15px;
+}
+.search-form {
+  position: relative;
+}
+.headContent{
+  position: -webkit-sticky;
+  position: sticky;
+  top:-10px;
+  z-index: 999;
+}
+.tabNav{
+
+  top:100px;
+  border-radius: 15px 15px 0px 0px;
+  overflow: hidden;
+  color: white;
+  box-shadow: rgba(0, 0, 0, 0.5) 0rpx -15rpx 15rpx 5rpx;
+}
+.homeMainTeamCard{
+  margin:10px auto 20px auto;
+  width:85%;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: rgba(0, 0, 0, 0.1) 3px 3px 6px;
+  background-size: 100% 100%;
+  background-color: #F7F5F5;
+}
+.homeMainTeamCard>.homeMainTeamCardTitile{
+  font-weight: bolder;
+  font-size: 17px;
+  max-width: 70%;
+}
+.homeMainTeamCard>.homeMainTeamCardSubTitile{
+  margin-top:6px;
+  margin-left: 5px;
+  word-wrap: break-word;
+  max-width:60%;
+}
+.homeMainTeamCardActionBar{
+  padding: 5px 5px 5px 5px;
+  display: flex;
+  flex-direction: row;
+  min-height: 50px;
+}
+.homeMainTeamCardActionBarBadge{
+display: flex;
+flex-direction: column;
+}
+.homeMainTeamCardActionBarBadge>.miniBadge{
+  margin-bottom: 5px;
+  margin-left: 0px !important;
+  min-width: 150rpx;
+  color:white;
+  text-align: center;
+  border-radius: 9rpx;
+  padding: 5rpx 15rpx;
+}
+.homeMainTeamCardActionBarBtn{
+flex:1;
+position: relative;
+padding:auto 5px 5px auto;
+}
+.homeMainTeamCardActionBarBtn>button{
+  width:190rpx !important;
+  position: absolute;
+  right:0rpx;
+  bottom:0rpx;
+}
+.search-form{
+  display: flex;
+  flex-direction: row;
+  position: relative;
+}
+.search-form>.action{
+  margin-right:0px !important;
+}
+.fullAddBtn{
+  position: fixed;
+  left:25px;
+  bottom: 25px;
+  height:40px;
+  width:40px;
+  border-radius: 50%;
+  font-size: 25px;
+  z-index: 1001;
+}
+.fullAddBtn>text{
+  transition-duration: 0.5s;
+}
+.fullAddBtn>text.rotate{
+  transform: rotate(45deg);
+}
+.DrawerPage {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  left: 0vw;
+  background-color: #f1f1f1;
+  transition: all 0.4s;
+}
+
+.DrawerPage.show {
+  transform: scale(0.9, 0.9);
+  left: 85vw;
+  box-shadow: 0 0 60rpx rgba(0, 0, 0, 0.2);
+  transform-origin: 0;
+}
+
+.DrawerWindow {
+  position: absolute;
+  width: 85vw;
+  height: 100vh;
+  left: 0;
+  top: 0;
+  transform: scale(0.9, 0.9) translateX(-100%);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.4s;
+}
+
+.DrawerWindow.show {
+  transform: scale(1, 1) translateX(0%);
+  opacity: 1;
+  pointer-events: all;
+}
+
+.DrawerClose {
+  position: absolute;
+  width: 40vw;
+  height: 100vh;
+  right: 0;
+  top: 0;
+  color: transparent;
+  padding-bottom: 30rpx;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.01), rgba(0, 0, 0, 0.6));
+  letter-spacing: 5px;
+  font-size: 50rpx;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.4s;
+}
+
+.DrawerClose.show {
+  opacity: 1;
+  pointer-events: all;
+  width: 15vw;
+  color: #fff;
+}
+
+.DrawerPage .cu-bar.tabbar .action button.icon {
+  width: 64rpx;
+  height: 64rpx;
+  line-height: 64rpx;
+  margin: 0;
+  display: inline-block;
+}
+
+.DrawerPage .cu-bar.tabbar .action .cu-avatar {
+  margin: 0;
+}
+
+.DrawerPage .nav {
+  flex: 1;
+}
+
+.DrawerPage .nav .cu-item.cur {
+  border-bottom: 0;
+  position: relative;
+  background-color: rgb(241, 241, 241) !important;
+}
+.nav .cu-item{
+  margin:0rpx !important;
+  background-color: #A9A8EC;
+  font-size: 35rpx;
+  font-family: YouYuan;
+  font-weight: bold;
+}
+
+.DrawerPage .cu-bar.tabbar .action {
+  flex: initial;
+}
+
+.DrawerWindow .bar{
+  width:100%;
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  justify-content:center;
+  margin-top:85rpx;
+}
+.DrawerWindow .bar .title{
+font-weight: bolder;
+font-size: 45rpx;
+margin-top:5rpx;
+margin-bottom: 5rpx;
+}
+.DrawerWindow .bar .action{
+position: absolute;
+left:20rpx;
+text-align: center;
+margin-top:8px;
+color:rgb(168, 167, 230);
+font-size:35rpx;
+}
+.DrawerWindow .infoBar{
+  background-color: rgb(168, 167, 230);
+  color:white;
+  font-size: 25rpx;
+  width:100%;
+  display: block;
+  text-align: center;
+  padding-top:10rpx;
+  padding-bottom: 10rpx;
+}
+.DrawerWindow .titleBanner{
+  font-size: 35rpx;
+  font-weight: bolder;
+  margin:15rpx auto 10rpx 60rpx;
+  display: block;
+  width: 100%;
+  position: relative;
+}
+.DrawerWindow .titleBanner::before{
+  content: '';
+  height:105%;
+  display: block;
+  background-color: rgb(168, 167, 230);
+  width:15rpx;
+  position: absolute;
+  top:0rpx;
+  left:-35rpx;
+}
+.DrawerWindow .slector{
+
+}
+.labelFilter{
+  position: relative;
+  padding:8rpx 20rpx 12rpx 20rpx;
+  text-align: center;
+  background-color: rgb(244, 244, 244);
+  color: gray;
+  font-size: 12px;
+  width:auto;
+  border-radius: 15rpx;
+  box-shadow: rgba(0, 0, 0, 0.1) 0rpx 3rpx 6rpx;
+  margin-right: 25rpx;
+  margin-bottom: 25rpx;
+}
+
+.DrawerWindow .labelBox{
+  width:90%;
+  margin:35rpx auto 15rpx auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.labelFilter.seleted{
+  background-color: #A9A8EC;
+  color:white;
+}
+.newPostDrawer{
+  background-color: rgb(168, 167, 226,0.2);
+  height:200%;
+  width:100%;
+  display: block;
+  top:140rpx;
+  left:0rpx;
+  z-index: 1000;
+  position: fixed;
+  backdrop-filter: blur(2vw);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top:250rpx ;
+}
+.newPostDrawer .bigBtn{
+background-color: rgb(168, 167, 226);
+border-radius: 15rpx;
+color: white;
+font-size: 35rpx;
+box-shadow: rgba(0, 0, 0, 0.16) 3rpx 3rpx 6rpx;
+min-width: 550rpx;
+min-height:280rpx;
+display: flex;
+flex-direction: row;
+align-items: center;
+margin-bottom: 50rpx;
+}
+.newPostDrawer .bigBtn text{
+  margin:50rpx auto;
+}
+#homePageMainContent{
+  overflow: hidden;
+}
+.fake-searchBox{
+background-color: #6D6AEF;
+display: flex;
+flex-direction: row;
+font-size:35rpx;
+align-items: center;
+justify-content: center;
+position: relative;
+padding-bottom: 30rpx;
+padding-top: 15rpx;
+}
+.fake-search-form{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: #FFFFFF;
+  border-radius: 40rpx;
+  overflow: hidden;
+  padding-right: 104rpx;
+}
+.fake-search-form>input{
+  padding:20rpx auto 20rpx 35rpx;
+  height:70rpx;
+  width:400rpx;
+}
+.searchBtn{
+  width:87rpx;
+  border-top-right-radius: 40rpx;
+  border-bottom-right-radius: 40rpx;
+  background-color: #A9A8EC;
+  color: white;
+  position: absolute;
+  height: 70rpx;
+  display: flex;
+  justify-content: center;
+align-items: center;
+right:60rpx;
+font-family: YouYuan;
+}
+#filterBtn{
+  color: white;
+  margin-right: 15rpx;
+  font-size: 50rpx;
+}
+.fake-background{
+  background-color: #6D6AEF;
+  width:100%;
+  height:50rpx;
+  position:absolute;
+}

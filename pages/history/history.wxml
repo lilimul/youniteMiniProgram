@@ -1,0 +1,7 @@
+<view class="homeMainTeamCard padding">
+	<view class="homeMainTeamCardSubTitile" style="font-weight:600">发布时间：{{editDate}}</view>
+	<view class="homeMainTeamCardSubTitile" style="font-weight:600">撤回时间：{{deleteDate}}</view>
+	<view class="homeMainTeamCardSubTitile" style="font-weight:600">浏览量：15</view>
+	<view class="homeMainTeamCardSubTitile" style="font-weight:600">邀请数：5</view>
+	<view class="homeMainTeamCardSubTitile" style="font-weight:600">沟通数：10</view>
+</view>

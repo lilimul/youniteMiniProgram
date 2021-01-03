@@ -1,0 +1,76 @@
+<!--conteDetail.wxml-->
+<view class="headContent">
+	<cu-custom class="homeNavi" isBack="{{true}}">
+		<view slot="content">竞赛详情</view>
+	</cu-custom>
+</view>
+<view class="mainContent">
+	<view class="title">
+		<text class="conteName">测绘大创项目招经管计院有导师国家级立项</text>
+		<text class="conteMemo">共招募3人</text>
+	</view>
+	<view class="divider"></view>
+	<view class="conteSnack">
+		<div class="labelBox">
+			<div class="labelFilter">国创项目</div>
+			<div class="labelFilter">商科</div>
+			<div class="labelFilter">计算机</div>
+		</div>
+		<view class="remainText">剩余人数：2人</view>
+	</view>
+	<view class="captanCard">
+		<view class="avatar">
+			<view class="cu-avatar round lg margin-left"
+				style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big10001.jpg);">
+				<view class="cu-tag badge cuIcon-male bg-blue"></view>
+			</view>
+		</view>
+		<view class="info">
+			<view class="name">
+				<text>小U</text>
+				<view class="nameLable">初次参加</view>
+			</view>
+			<view class="academy">
+				测绘学院
+			</view>
+		</view>
+		<view class="action">
+			队长名片 <text class="cuIcon-right text-gray " style="margin-left:5rpx;"></text>
+		</view>
+	</view>
+	<!--发布时间-->
+	<view class="time">
+		<view class="timeBegin">
+			<text class="cuIcon-time text-gray" style="margin-right:10rpx;"></text>
+			<text>发布时间：2020.09.26 14:02</text>
+		</view>
+		<view class="timeEnd">
+			<text class="cuIcon-time text-gray" style="margin-right:10rpx;"></text>
+			<text>截止时间：2020.10.28</text>
+		</view>
+		<view class="remain">
+			<view class="remaintext">剩余</view>
+			<view class="remainDate">
+				<text style="font-size:45rpx;color:rgb(109, 106, 239);">12</text>
+				<text>天</text>
+			</view>
+		</view>
+	</view>
+	<!--队伍描述-->
+	<view style="height:150rpx;">
+		<div class="titleBanner">队伍描述</div>
+	</view>
+	<!--队伍描述-->
+	<view style="height:150rpx;">
+		<div class="titleBanner">队伍描述</div>
+	</view>
+</view>
+<view id="footer">
+	<view class="fav">
+		<text class="cuIcon-favor" style="color:rgb(63, 128, 255);margin-right:15rpx;"></text>
+		<text style="font-size:25rpx;">收藏</text>
+	</view>
+	<view class="margin-tb-sm text-center">
+		<button class="cu-btn bg-blur" id="applyBtn"> 申请加入队伍</button>
+	</view>
+</view>

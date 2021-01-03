@@ -1,0 +1,41 @@
+<view class="mainContent resume-publish padding  shadow-warp">
+	<view class="resume-publish-counter">
+		<view class="item">
+			<view class="count" style="font-size:40rpx">
+				{{teamInfo.tInvited}}
+			</view>
+			<view class="discribe">
+				已招募
+			</view>
+		</view>
+		<view class="bar" style="background:#C9C9C9;"></view>
+
+		<view class="item">
+			<view class="count" style="font-size:40rpx">
+				{{teamInfo.tRemain?teamInfo.tRemain:0}}
+			</view>
+			<view class="discribe">
+				剩余名额
+			</view>
+		</view>
+	</view>
+</view>
+
+<view wx:for="{{teamMemberInfos}}" wx:for-item="member" class="mainContent resume-publish padding  shadow-warp row">
+	<view class="cu-avatar lg round margin-left" style="background-image:url({{member.memIcon}});"></view>
+	<view class="column">
+		<view class="row">
+			<text class="title" style="font-size:45rpx;font-weight:700">{{member.memName}}</text>
+
+			<view class="homeMainTeamCardActionBar">
+				<view class="homeMainTeamCardActionBarBadge">
+					<view class="miniBadge" style="background-color:#A9A8EC">
+						{{member.memGrade}}
+					</view>
+				</view>
+			</view>
+		</view>
+		<text class="title" style="font-size:30rpx;font-weight:500">{{member.memMajor}}</text>
+	</view>
+	<text class="cuIcon-right lg text-gray memActionIcon" bindtap="memInfoNavi" data-mem-uid="{{member.memId}}"></text>
+</view>

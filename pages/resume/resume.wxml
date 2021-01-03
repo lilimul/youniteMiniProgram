@@ -1,0 +1,99 @@
+<!--resume.wxml-->
+<view class="headContent">
+	<cu-custom class="homeNavi" isBack="{{true}}">
+		<view slot="content">修改简历</view>
+	</cu-custom>
+</view>
+<view class="mainContent">
+	<view class="history  shadow-warp margin-top">
+		<view class="cu-bar bg-white solids-bottom ">
+			<view>
+				<text class="cuIcon-titles text-orange"></text>
+				<text class="text-xl text-bold">教育经历</text>
+			</view>
+			<view class="cu-bar-action">
+			<view>
+			<text class="cuIcon-search text-orange" style="margin-right:5px;"></text>
+				<text>预览</text>
+			</view>
+			<view>
+				<text class="cuIcon-add text-orange" style="margin-right:5px;"></text>
+				<text>添加</text>
+			</view>
+			</view>
+		</view>
+		<view class="history-main">
+			<view class="timeline">
+				<view class="timeline-item">
+					<view class="content">
+						<text class="round"></text>
+						<text class="time">2012.9-2016.6</text>
+						<view class="timeline-item-card">
+							<view class="timeline-item-card-info">
+								武汉大学 | 本科
+							</view>
+							<view class="timeline-item-card-subinfo">
+								<view>
+									主修专业：新闻与传播专业 传播学
+								</view>
+								<view>
+									在校经历：担任班长</view>
+							</view>
+						</view>
+					</view>
+					<view class="action">
+						<text class="cuIcon-right text-orange"></text>
+					</view>
+				</view>
+			</view>
+		</view>
+	</view>
+	<!--简历发布页面-->
+	<view class="resume-publish padding  shadow-warp">
+		<view class="resume-publish-title">
+			<view class="info">
+				<view class="title text-xl text-bold">简历发布</view>
+				<view class="time">发布时间：2020.8.12 13:00</view>
+			</view>
+			<view class="status text-green">
+				<text class="cuIcon-punch"></text>
+				发布中
+			</view>
+		</view>
+		<view class="resume-publish-counter">
+			<view class="item">
+				<view class="count">
+					15
+				</view>
+				<view class="discribe">
+					<text class="cuIcon-attentionfill text-grey "></text>浏览量
+				</view>
+			</view>
+			<view class="bar"></view>
+			<view class="item">
+				<view class="count">
+					8
+				</view>
+
+				<view class="discribe">
+					<text class="cuIcon-group_fill text-grey "></text>邀请数
+				</view>
+			</view>
+			<view class="bar"></view>
+			<view class="item">
+				<view class="count">
+					2
+				</view>
+				<view class="discribe">
+					<text class="cuIcon-communityfill text-grey"></text>沟通中
+				</view>
+			</view>
+		</view>
+		<view class="action-bar">
+			<button style="margin-right:5px;" class="cu-btn block line-orange lg">
+				<text class="cuIcon-write"></text> 更新简历</button>
+			<button class="cu-btn block line-red lg">
+				<text class="cuIcon-repeal"></text> 撤回简历</button>
+		</view>
+	</view>
+</view>

@@ -1,0 +1,74 @@
+/* pages/editTeam/editTeam.wxss */
+.cu-form-group .title {
+	text-align: justify;
+	padding-right: 30rpx;
+	font-size: 35rpx;
+	position: relative;
+	height: 60rpx;
+	line-height: 60rpx;
+  font-weight: 700;
+}
+.cu-form-group {
+	background-color: var(--white);
+	padding: 1rpx 30rpx;
+	display: flex;
+	
+	min-height: 110rpx;
+	justify-content: space-between;
+}
+.subtitle{
+  margin-top: 20rpx;
+  margin-left: 30rpx;
+  margin-bottom: 10rpx;
+  font-size: 35rpx;
+  font-weight: 700;
+}
+.mainContent{
+margin:15px 30px;
+}
+.resume-publish{
+  border-radius: 15px;
+  background-color: white;
+}
+.resume-publish>.resume-publish-title{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 13px;
+}
+.column
+{
+display: flex;
+flex-direction: column;
+margin-left: 20rpx;
+}
+.row
+{
+  display: flex;
+flex-direction: row;
+}
+
+
+.homeMainTeamCardActionBar{
+  padding: 5px 5px 5px 5px;
+  display: flex;
+  flex-direction: row;
+  min-height: 20px;
+}
+.homeMainTeamCardActionBarBadge{
+display: flex;
+flex-direction: column;
+}
+
+.homeMainTeamCardActionBarBadge>.miniBadge{
+  margin-bottom: 5px;
+  margin-left: 0px !important;
+  min-width: 150rpx;
+  color:white;
+  text-align: center;
+  border-radius: 9rpx;
+  padding: 5rpx 15rpx;
+}
+
+

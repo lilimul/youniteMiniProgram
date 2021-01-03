@@ -1,0 +1,10 @@
+{
+
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#6D6AEF",
+    "navigationBarTitleText": "已招募的队员",
+    "navigationBarTextStyle": "white",
+ 
+  "usingComponents": {}
+  
+}

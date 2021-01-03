@@ -1,0 +1,71 @@
+<form bindsubmit="submitSelfInfo">
+  <view class="mainContent resume-publish padding  shadow-warp row rowCenter">
+    <view class="column">
+
+      <view bindtap="updateAvatar">
+        <image class="userinfo-avatar"
+          style="margin-left:200rpx; " src='{{imgUrl}}'>
+        </image>
+
+        <view class="flex" style="padding:10rpx ">
+          <button data-text="上传头像" class="cu-btn lg shadow padding " role="button" aria-disabled="false"
+            style="height: 60rpx;width:40vw;border-radius:1.5vh;justify-content:center;background:#A9A8EC;color:white;">上传头像</button>
+        </view>
+      </view>
+      <view class="cu-form-group margin-top" style="min-height: 80rpx;">
+        <view class="title">姓名</view>
+        <input name="name" placeholder="请输入姓名" selection-start="-1" selection-end="-1" cursor="-1"
+          value="{{myInfo.name}}"></input>
+      </view>
+
+      <view class="cu-form-group" style="min-height: 80rpx;">
+        <view class="title">院系</view>
+        <input name="college" placeholder="请输入学院名称" selection-start="-1" selection-end="-1" cursor="-1"
+          value="{{myInfo.college}}"></input>
+      </view>
+
+      <view class="cu-form-group" style="min-height: 80rpx;">
+        <view class="title">年级</view>
+        <input name="grade" placeholder="请输入年级" selection-start="-1" selection-end="-1" cursor="-1"
+          value="{{myInfo.grade}}"></input>
+      </view>
+
+      <view class="cu-form-group" style="min-height: 80rpx;">
+        <view class="title">自我介绍</view>
+        <input name="selfIntroduction" placeholder="简单自我介绍一下吧~" selection-start="-1" selection-end="-1" cursor="-1"
+          value="{{myInfo.selfIntroduction}}"></input>
+      </view>
+    </view>
+
+  </view>
+
+  <view class="mainContent resume-publish padding  shadow-warp row rowCenter">
+    <view class="column">
+
+      <view class="cu-form-group" style="min-height: 80rpx;">
+        <view class="title">微信</view>
+        <input name="wechat" placeholder="请输入微信号" selection-start="-1" selection-end="-1" cursor="-1"
+          value="{{myInfo.wechat}}"></input>
+      </view>
+
+      <view class="cu-form-group" style="min-height: 80rpx;">
+        <view class="title">QQ</view>
+        <input name="QQ" placeholder="请输入QQ" selection-start="-1" selection-end="-1" cursor="-1"
+          value="{{myInfo.QQ}}"></input>
+      </view>
+
+      <view class="cu-form-group" style="min-height: 80rpx;">
+        <view class="title">联系电话</view>
+        <input name="phone" placeholder="请输入联系电话" selection-start="-1" selection-end="-1" cursor="-1"
+          value="{{myInfo.phone}}"></input>
+      </view>
+
+    </view>
+  </view>
+  <view class="rowCenter" style="margin-left:30px;color:white;font-size:30rpx">
+    *只有匹配成功后，您的资料才会向对方展示
+  </view>
+
+  <button form-type="submit" class="cu-btn lg shadow" role="button" aria-disabled="false"
+    style="height: 90rpx;width:86vw;border-radius:3vh;justify-content:left；position:absolute;left:7%;background:#A9A8EC;color:white">保存</button>
+</form>

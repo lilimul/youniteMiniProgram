@@ -1,0 +1,16 @@
+/* pages/mine/mine.wxss */
+ page {
+  background-color: #6D6AEF;
+} 
+
+.outline{
+  height: 70rpx;
+  width: 80rpx;
+  background-color: #6D6AEF;
+  
+  }
+  
+  .purple{
+  background-color: rgb(109, 106, 239);
+	color: var(--white);
+}

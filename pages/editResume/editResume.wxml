@@ -1,0 +1,60 @@
+<form bindsubmit='formSubmit' method="post">
+  <view class="cu-form-group margin-top">
+    <view class="title">简历标题</view>
+    <input type="text" name="resumeTitle" placeholder="*有吸引力的标题可能会提升浏览量哦" selection-start="-1" selection-end="-1" cursor="-1" value="{{resumeInfo.resumeTitle}}">
+    <!-- *有吸引力的标题可能会提升浏览量哦 -->
+    </input>
+  </view>
+
+  <view class="subtitle">组队意愿</view>
+
+  <view class="cu-form-group" style="min-height:80rpx">
+    <view class="title" style="font-size:30rpx">意愿一</view>
+    <input type="text" name="yiyuan1" placeholder="比赛名称" selection-start="-1" selection-end="-1" cursor="-1" value="{{resumeInfo.yiyuan1}}">
+    <!-- 比赛名称 -->
+    </input>
+  </view>
+
+  <view class="cu-form-group" style="min-height:80rpx">
+    <view class="title" style="font-size:30rpx">意愿二</view>
+    <input type="text" name="yiyuan2" placeholder="比赛名称" selection-start="-1" selection-end="-1" cursor="-1" value="{{resumeInfo.yiyuan2}}">
+    <!-- 比赛名称 -->
+    </input>
+  </view>
+
+  <view class="cu-form-group" style="min-height:80rpx">
+    <view class="title" style="font-size:30rpx">意愿三</view>
+    <input type="text" name="yiyuan3" placeholder="比赛名称" selection-start="-1" selection-end="-1" cursor="-1" value="{{resumeInfo.yiyuan3}}">
+    <!-- 比赛名称 -->
+    </input>
+  </view>
+
+  <view class="subtitle">社团经历</view>
+  <view class="cu-form-group">
+    <textarea name="shetuanExperience"  maxlength="-1" placeholder="" value="{{resumeInfo.shetuanExperience}}">
+    </textarea>
+  </view>
+
+  <view class="subtitle">项目/获奖经历</view>
+  <view class="cu-form-group">
+    <textarea name="projectExperience"  maxlength="-1" placeholder="" value="{{resumeInfo.projectExperience}}">
+    </textarea>
+  </view>
+
+  <view class="subtitle">实习/实践经历</view>
+  <view class="cu-form-group">
+    <textarea name="shixiExperience" maxlength="-1" placeholder="" value="{{resumeInfo.shixiExperience}}">
+    </textarea>
+  </view>
+
+  <!-- <view class="subtitle">实习/实践经历</view>
+  <view class="cu-form-group">
+    <textarea name="shixiExperience" bindinput="textareaAInput" maxlength="-1" placeholder="" value=" ">
+    </textarea>
+  </view> -->
+
+  <view class="flex" style="padding:10rpx">
+    <button form-type="submit" class="cu-btn lg shadow margin-top padding " role="button" aria-disabled="false"
+      style="height: 110rpx;width:88vw;border-radius:3vh;justify-content:center;background:#6D6AEF;color:white">保存</button>
+  </view>
+</form>

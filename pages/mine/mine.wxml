@@ -1,0 +1,42 @@
+
+<view bindtap="navToMe"
+  style="width:80vw;height:30%;background:#F7F5F5;box-shadow: 1vh 1vh 2vh rgba(0, 0, 0, 0.16);opacity: 1;border-radius:0 0 3.6vh 3.6vh;position:absolute;left:10%;top:0%">
+  <text style="position:absolute;top:10%;left:8%;font-size:50rpx;font-weight:700">{{name}}</text>
+  <view wx:if="{{avatarUrl}}" class="cu-avatar xl round"
+      style="margin-top:15rpx; margin-left:400rpx; background-image:url({{avatarUrl}});">
+    </view>
+    <view wx:else class="cu-avatar xl round"
+      style="margin-top:15rpx; margin-left:400rpx; background-image:url('/assets/icon/我的icon.png');">
+    </view>
+  <!-- <view
+    style="width:18vw;height:18%;background:#A9A8EC;box-shadow: 1vh 1vh 2vh rgba(0, 0, 0, 0.16);opacity: 1;border-radius:3.6vh;position:absolute;left:30%;top:12%">
+  </view> -->
+  <!-- <text style="position:absolute;top:13%;left:33%;font-size:35rpx;color:#FFFFFF">未命名</text> -->
+  <text style="position:absolute;top:35%;left:8%;font-size:35rpx">{{grade}}</text>
+  <text style="position:absolute;top:50%;left:8%;font-size:35rpx">{{college}}</text>
+  <text style="position:absolute;top:65%;left:8%;font-size:35rpx">匹配次数：{{count}}次</text>
+  <input style="position:absolute;top:80%;left:6%;" placeholder="（自我介绍）" value="{{selfIntroduction}}" />
+</view>
+<view
+  style="width:80vw;height:12%;background:#F7F5F5;box-shadow: 1vh 1vh 2vh rgba(0, 0, 0, 0.16);opacity: 1;border-radius:3.6vh;position:absolute;left:10%;top:37%"
+  bindtap="navToResume">
+  <text style="position:absolute;top:30%;left:20%;font-size:37rpx">我的简历</text>
+  <image src="/assets/icon/简历icon.png" style="height:7.2vh;width:7.2vh;position:absolute;top:18%;left:3%" />
+  <image src="/assets/icon/箭头.png" style="height:5vh;width:2.5vh;position:absolute;top:28%;left:90%" />
+</view>
+
+<view
+  style="width:80vw;height:12%;background:#F7F5F5;box-shadow: 1vh 1vh 2vh rgba(0, 0, 0, 0.16);opacity: 1;border-radius:3.6vh;position:absolute;left:10%;top:52%"
+  bindtap="navToMyTeam">
+  <text style="position:absolute;top:30%;left:20%;font-size:37rpx">我的团队</text>
+  <image src="/assets/icon/我的团队icon.png" style="height:4.5vh;width:4.5vh;position:absolute;top:29%;left:5%" />
+  <image src="/assets/icon/箭头.png" style="height:5vh;width:2.5vh;position:absolute;top:30%;left:90%" />
+</view>
+
+<view
+  style="width:80vw;height:12%;background:#F7F5F5;box-shadow: 1vh 1vh 2vh rgba(0, 0, 0, 0.16);opacity: 1;border-radius:3.6vh;position:absolute;left:10%;top:67%">
+  <text style="position:absolute;top:30%;left:20%;font-size:37rpx">设置</text>
+  <image src="/assets/icon/设置icon.png" style="height:6vh;width:6vh;position:absolute;top:25%;left:5%" />
+  <image src="/assets/icon/箭头.png" style="height:5vh;width:2.5vh;position:absolute;top:28%;left:90%" />
+</view>
+<!-- <i-avatar size="large" style="position:absolute;left:66%;top:3%">U</i-avatar> -->

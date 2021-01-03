@@ -1,0 +1,173 @@
+<!--index.wxml-->
+<scroll-view scroll-y class="DrawerPage {{showDrawer?'show':''}}">
+	<view>
+		<view class="headContent">
+			<cu-custom class="homeNavi" isBack="{{false}}">
+				<view slot="content">YOUnite</view>
+			</cu-custom>
+			<view class="fake-searchBox">
+				<div style="left:10px;" bindtap="showDrawer" id="filterBtn"><text class="cuIcon-filter"></text></div>
+				<view class="fake-search-form">
+					<text class="cuIcon-search" style="margin-right:15rpx;margin-left:15rpx;"></text>
+					<input type="text" placeholder="{{searchHolder}}" confirm-type="search" bindinput="inputSearch" value="{{searchContestKeyWords}}"></input>
+					<view class="searchBtn" bindtap="resetSearching">{{searching?"关闭":"搜索"}}</view>
+				</view>
+			</view>
+			<!-- <view class="cu-bar bg-white search" style="top:0px;">
+		<button class="cu-btn icon button-hover" style="left:10px;" bindtap="showDrawer"><text class="cuIcon-filter"></text></button>
+		<view class="search-form round">
+			<text class="cuIcon-search"></text>
+			<input type="text" placeholder="{{searchHolder}}" confirm-type="search"></input>
+			<view class="action">
+				<button class="cu-btn shadow-blur round sbtn">搜索</button>
+			</view>
+		</view>
+	</view> -->
+
+		</view>
+		<div id="homePageMainContent">
+			<!--hideable content-->
+			<!-- <swiper class="card-swiper round-dot" indicator-dots="true" circular="true" autoplay="true" interval="5000" duration="500" bindchange="cardSwiper" indicator-color="#8799a3" indicator-active-color="#0081ff">
+	<swiper-item wx:for="{{swiperList}}" wx:key class="{{cardCur==index?'cur':''}}">
+		<view class="swiper-item">
+			<image src="{{item.url}}" mode="aspectFill" wx:if="{{item.type=='image'}}"></image>
+			<video src="{{item.url}}" autoplay loop muted show-play-btn="{{false}}" controls="{{false}}" objectFit="cover" wx:if="{{item.type=='video'}}"></video>
+		</view>
+	</swiper-item>
+</swiper> -->
+			<view class="fake-background"></view>
+			<!--搜索页面-->
+			<view class="search-background {{searching?'':'hide'}}">
+				<view class="homeMainContent">
+					<view class="homeMainTeamCard padding" wx:for="{{searchContests}}" wx:for-item="contest" wx:key="index" wx:if="{{!contest.hide}}">
+						<view class="homeMainTeamCardTitile">{{contest.name}}</view>
+						<view class="homeMainTeamCardSubTitile">{{contest.discript}}</view>
+						<view class="homeMainTeamCardActionBar">
+							<view class="homeMainTeamCardActionBarBadge">
+								<view class="miniBadge" style="background-color:#C9C9C9">
+									{{contestsType[contest.type]}}
+								</view>
+								<view class="miniBadge" style="background-color:#A9A8EC">
+									{{contestsType[contest.time[0]]}}
+								</view>
+							</view>
+							<view class="homeMainTeamCardActionBarBtn">
+								<button style="background-color:#6D6AEF;color:white;" class="cu-btn shadow-blur round">查看详情</button>
+							</view>
+						</view>
+					</view>
+				</view>
+				<!--搜索结果为空-->
+				<view class="homeMainTeamCard padding" wx:if="{{searchContests.length==0}}">
+					<view class="homeMainTeamCardTitile">暂无匹配结果</view>
+					<view class="homeMainTeamCardSubTitile">更多比赛强势来袭中...</view>
+				</view>
+			</view>
+			<scroll-view scroll-x class="nav tabNav">
+				<view class="flex text-center">
+					<view class="cu-item flex-sub {{0==TabCur?'text-purple cur':''}}" wx:key bindtap="tabSelect" data-id="0" style="border-bottom-right-radius:35rpx;">
+						比赛信息
+					</view>
+					<view class="cu-item flex-sub {{1==TabCur?'text-purple cur':''}}" wx:key bindtap="tabSelect" data-id="1" style="border-bottom-left-radius:35rpx;">
+						人才库
+					</view>
+				</view>
+			</scroll-view>
+			<view class="homeMainContent" wx-if="{{TabCur==0}}">
+				<view class="homeMainTeamCard padding" wx:for="{{contests}}" wx:for-item="contest" wx:key="index" wx:if="{{!contest.hide}}">
+					<view class="homeMainTeamCardTitile">{{contest.name}}</view>
+					<view class="homeMainTeamCardSubTitile">{{contest.discript}}</view>
+					<view class="homeMainTeamCardActionBar">
+						<view class="homeMainTeamCardActionBarBadge">
+							<view class="miniBadge" style="background-color:#C9C9C9">
+								{{contestsType[contest.type]}}
+							</view>
+							<view class="miniBadge" style="background-color:#A9A8EC">
+								{{contestsType[contest.time[0]]}}
+							</view>
+						</view>
+						<view class="homeMainTeamCardActionBarBtn">
+							<button style="background-color:#6D6AEF;color:white;" class="cu-btn shadow-blur round">查看详情</button>
+						</view>
+					</view>
+				</view>
+			</view>
+			<!--人才库-->
+			<view class="homeMainContent" wx-if="{{TabCur==1}}">
+				<view class="homeMainTeamCard padding" wx:for="{{talents}}" wx:for-item="talent" wx:key="index">
+					<view class="homeMainTeamCardTitile">{{talent.name}}</view>
+					<view class="homeMainTeamCardSubTitile">{{talent.slogan}}</view>
+					<view class="homeMainTeamCardActionBar">
+						<view class="homeMainTeamCardActionBarBadge">
+							<view class="miniBadge" style="background-color:#C9C9C9">
+								{{academy[talent.academy]}}
+							</view>
+							<view class="miniBadge" style="background-color:#A9A8EC">
+								{{talent.label}}
+							</view>
+						</view>
+						<view class="homeMainTeamCardActionBarBtn">
+							<button style="background-color:#6D6AEF;color:white;" class="cu-btn shadow-blur round" data-talenId="{{index}}">查看详情</button>
+						</view>
+					</view>
+				</view>
+			</view>
+			<div class="newPostDrawer" wx-if="{{openNewPostDrawer}}" bindtap="triggleNewpostDrawer" data-closeFrom="acrylic">
+			<!--index0 首页-->
+				<view class="newPostPage {{newPostIndex!=0?'hide':''}}">
+					<div class="bigBtn" catchtap="newPostNextStep" data-nextIndex="1">
+						<text>
+发布队伍招募信息，寻找队员</text>
+					</div>
+					<div class="bigBtn" catchtap="newPostNextStep" data-nextIndex="2">
+						<text>
+发布我的简历，寻找队伍</text>
+					</div>
+				</view>
+				<!--index1 选择比赛发布-->
+					<view class="newPostPage {{newPostIndex!=1?'hide':''}}">
+					<div class="smlBtn" catchtap="newPostNextStep" data-nextIndex="3" >
+						<text>
+发布大广赛信息</text>
+					</div>
+					<div class="smlBtn" catchtap="newPostNextStep" data-nextIndex="4">
+						<text>
+发布其他比赛信息</text>
+					</div>
+				</view>
+				<!--index2 发布简历-->
+								<view class="newPostPage {{newPostIndex!=2?'hide':''}}">
+					<div class="smlBtn" catchtap="newPostNextStep" data-nextIndex="5" >
+						<text>编辑我的简历信息</text>
+					</div>
+					<div class="smlBtn" catchtap="newPostNextStep" data-nextIndex="6">
+						<text>确认发布简历</text>
+					</div>
+				</view>
+			</div>
+		</div>
+		<view class="fullAddBtn cu-btn shadow-blur" style="background-color: rgb(109, 106, 239)" bindtap="triggleNewpostDrawer" data-closeFrom="btn">
+			<text class=" {{openNewPostDrawer?'':'rotate'}} cuIcon-close text-white"></text>
+		</view>
+	</view>
+</scroll-view>
+<!--The left drawer on left side-->
+<view class="DrawerClose {{showDrawer?'show':''}}" bindtap="hideDrawer">
+	<text class="cuIcon-pullright"></text>
+</view>
+<scroll-view scroll-y class="DrawerWindow {{showDrawer?'show':''}}">
+	<div class="bar"> <text class="title">筛选</text>
+		<div class="action" bindtap="applyDrawer">应用</div>
+	</div>
+	<div class="infoBar">设置比赛意向，会按照你的要求筛选比赛项目</div>
+	<div class="titleBanner">竞赛类型（可多选）</div>
+	<div class="slector"></div>
+	<div class="labelBox">
+		<div wx:for="{{filterContestType}}" class="labelFilter {{item.sele?'seleted':''}}" data-index="{{index}}" wx:key="{{item.name}}" bindtap="modifyFilterByContestType">{{item.name}}</div>
+	</div>
+	<div class="titleBanner">年级要求（{{filterYearCount}}/{{filterYearType.length}}）</div>
+	<div class="slector"></div>
+	<div class="labelBox">
+		<div wx:for="{{filterYearType}}" class="labelFilter {{item.sele?'seleted':''}}" data-index="{{index}}" wx:key="{{item.name}}" bindtap="modifyFilterByYearType">{{item.name}}</div>
+	</div>
+</scroll-view>

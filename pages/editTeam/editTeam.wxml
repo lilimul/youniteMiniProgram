@@ -1,0 +1,92 @@
+<form bindsubmit='formSubmit' method="post">
+
+	<view class="cu-form-group margin-top">
+		<view class="title">招募标题</view>
+		<input name="title" placeholder="" selection-start="-1" selection-end="-1" cursor="-1"
+			value="{{teamInfo.title}}">
+		</input>
+	</view>
+
+	<view class="subtitle">赛事标签</view>
+
+	<view class="cu-form-group" style="min-height:80rpx">
+		<view class="title" style="font-size:30rpx">标签一</view>
+		<input name="label1" placeholder="标签将用于首页的竞赛筛选" selection-start="-1" selection-end="-1" cursor="-1"
+			value="{{teamInfo.label1}}">
+		</input>
+	</view>
+
+	<view class="cu-form-group" style="min-height:80rpx">
+		<view class="title" style="font-size:30rpx">标签二</view>
+		<input name="label2" placeholder="标签将用于首页的竞赛筛选" selection-start="-1" selection-end="-1" cursor="-1"
+			value="{{teamInfo.label2}}">
+		</input>
+	</view>
+
+	<view class="cu-form-group" style="min-height:80rpx">
+		<view class="title" style="font-size:30rpx">标签三</view>
+		<input name="label3" placeholder="标签将用于首页的竞赛筛选" selection-start="-1" selection-end="-1" cursor="-1"
+			value="{{teamInfo.label3}}">
+		</input>
+	</view>
+
+	<view class="subtitle">队伍描述</view>
+	<view class="cu-form-group">
+		<textarea name="teamDiscription" bindinput="textareaAInput" maxlength="-1" placeholder=""
+			value="{{teamInfo.teamDiscription}} ">
+</textarea>
+	</view>
+
+	<view class="subtitle">招募要求</view>
+	<view class="cu-form-group">
+		<textarea name="teamRequire" bindinput="textareaAInput" maxlength="-1" placeholder=""
+			value="{{teamInfo.teamRequire}} ">
+</textarea>
+	</view>
+
+	<view class="cu-form-group margin-top">
+		<view class="title">招募人数</view>
+		<picker name="teamNumber" bindchange="PickerChange" value="{{teamInfo.teamNumber}}" range="{{picker}}">
+			<view class="picker">
+				{{teamInfo.teamNumber?picker[teamInfo.teamNumber]:'请选择'}}
+			</view>
+		</picker>
+	</view>
+
+	<view class="cu-form-group">
+		<view class="title">设置截止时间</view>
+		<picker name="endDate" mode="date" value="{{teamInfo.endDate}}" start="2020-01-01" end="2050-12-31" bindchange="DateChange">
+			<view class="picker">
+				{{teamInfo.endDate?teamInfo.endDate:'不设定'}}
+			</view>
+		</picker>
+	</view>
+
+	<view class="cu-form-group margin-top">
+		<view class="title">插入我的名片</view>
+		<switch name="cardOrNot" bindchange="switchChage" class="purple sm" checked="{{teamInfo.cardOrNot}}">
+		</switch>
+	</view>
+
+	<view wx:if="{{switchChage}}" class="mainContent resume-publish padding  shadow-warp row">
+		<view class="cu-avatar lg round margin-left" style="background-image:url({{imgUrl}});"></view>
+		<!-- <image class="avatar" url="{{imgUrl}}"></image> -->
+		<view class="column">
+			<view class="row">
+				<input name="name" class="title" style="font-size:45rpx;font-weight:700;margin-left:30rpx" value="{{name}}"></input>
+
+				<view class="homeMainTeamCardActionBar">
+					<view class="homeMainTeamCardActionBarBadge">
+						<input name="grade" class="miniBadge" style="background-color:#A9A8EC" value="{{grade}}">
+						</input>
+					</view>
+				</view>
+			</view>
+			<input name="college" class="title" style="font-size:30rpx;font-weight:500;margin-left:30rpx" value="{{college}}"></input>
+		</view>
+	</view>
+	<view class="flex" style="padding:10rpx">
+		<button form-type="submit" class="cu-btn lg shadow margin-top padding " role="button" aria-disabled="false"
+			style="height: 110rpx;width:88vw;border-radius:3vh;justify-content:center;background:#6D6AEF;color:white">保存</button>
+	</view>
+</form>

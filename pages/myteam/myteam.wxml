@@ -1,0 +1,72 @@
+<!--resume.wxml-->
+<picker bindchange="teamChange" value="{{teamNameIndex}}" range="{{teamNames}}">
+	<text style="position:absolute;top:3%;left:14%;font-size:40rpx;font-weight:700;color:white">{{teamInfo.tName}}<text class="cuIcon-unfold lg text-gray" wx:if="{{teamNames.length>1}}"></text></text>
+</picker>
+<text style="position:absolute;top:9%;left:14%;font-size:28rpx;font-weight:400;color:white">上次更新：{{teamInfo.tLastUpdate}}</text>
+<!-- <view bindtap="navToEditTeam">
+	<text style="position:absolute;top:4%;left:85%;font-size:28rpx;font-weight:400;color:white">添加</text>
+</view>
+
+<button class="cu-btn bg-purple lg shadow" role="button" aria-disabled="false" style="border-radius:3vh;justify-content:right；position:absolute;top:4%;left:85%;font-size:28rpx;background:#A9A8EC;font-weight:400;color:white">添加</button> -->
+
+
+<view style="position:absolute;top:15%;left:2%;">
+
+	<!--简历发布页面-->
+	<view class="mainContent resume-publish padding  shadow-warp" style="width:90vw">
+		<view class="resume-publish-counter">
+			<view class="item">
+				<view class="count">
+					{{teamInfo.tView}}
+				</view>
+				<view class="discribe">
+					<text class="cuIcon-attentionfill text-grey "></text>浏览量
+				</view>
+			</view>
+			<view class="bar" style="background:#C9C9C9;"></view>
+			<view class="item">
+				<view class="count">
+					{{teamInfo.tInvited}}
+				</view>
+
+				<view class="discribe">
+					<text class="cuIcon-group_fill text-grey "></text>已招募
+				</view>
+			</view>
+			<view class="bar" style="background:#C9C9C9;"></view>
+			<view class="item">
+				<view class="count">
+					{{teamInfo.tRemain?teamInfo.tRemain:0}}
+				</view>
+				<view class="discribe">
+					<text class="cuIcon-communityfill text-grey"></text>剩余名额
+				</view>
+			</view>
+		</view>
+	</view>
+	<!--按钮-->
+	<view class="padding flex flex-direction">
+		<button class="cu-btn bg-white lg shadow" role="button" aria-disabled="false"
+			style="height: 110rpx;width:88vw;border-radius:3vh;justify-content:left"
+			bindtap="navToMember">{{teamInfo.tInvited>0?"已邀请"+teamInfo.tInvited+"人":"虚位以待"}}</button>
+		<button class="cu-btn margin-tb-sm bg-white lg shadow" role="button" aria-disabled="false"
+			style="height: 110rpx;width:88vw;border-radius:3vh;justify-content:left"
+			bindtap="navToEditTeam">编辑队伍信息</button>
+	</view>
+
+	<button class="cu-btn bg-purple lg shadow" role="button" aria-disabled="false"
+		style="height: 110rpx;width:88vw;border-radius:3vh;justify-content:left；position:absolute;left:4%;background:#A9A8EC;"
+		bindtap="confirmDeleTeam">从队伍信息中撤回招募</button>
+</view>
+<!--Comfirm modal:Dele team?-->
+<view class="cu-modal bottom-modal {{currentModal=='ModalDeleTeam'&&showModal?'show':''}}">
+	<view class="cu-dialog">
+		<view class="cu-bar bg-white">
+			<view class="action text-green" bindtap="hideModal">取消</view>
+			<view class="action text-red" bindtap="startDeleTeam">删除</view>
+		</view>
+		<view class="padding-xl">
+			删除队伍信息会自动删除相关的邀请关系，且不能撤回，确定要继续删除吗？
+		</view>
+	</view>
+</view>
