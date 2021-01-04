@@ -1,8 +1,9 @@
 {
   "pages": [
+    "pages/index/index",
     "pages/resume/resume",
     "pages/Me/Me",
-    "pages/index/index",
+   
    
     "pages/mine/mine",
     
@@ -26,6 +27,7 @@
   },
   "tabBar": {
     "selectedColor": "#6D6AEF",
+    "borderStyle": "white",
     "list": [
       {
         "pagePath": "pages/index/index",

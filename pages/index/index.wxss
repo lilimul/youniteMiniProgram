@@ -239,7 +239,7 @@ font-size:35rpx;
 .DrawerWindow .titleBanner{
   font-size: 35rpx;
   font-weight: bolder;
-  margin:15rpx auto 10rpx 60rpx;
+  margin:80rpx auto 40rpx 60rpx;
   display: block;
   width: 100%;
   position: relative;
@@ -407,4 +407,12 @@ font-family: YouYuan;
 .newPostPage.hide{
   opacity: 0;
   height:0rpx;
+}
+.labelFilter.reset{
+  color:white;
+  position: absolute;
+  right:30rpx;
+  top:215rpx;
+  background-color: #BBDEFB;
+  z-index: 5;
 }

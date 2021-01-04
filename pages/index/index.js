@@ -9,6 +9,7 @@ Page({
     openNewPostDrawer:false,
     newPostIndex:0,
     searching:false,
+    drawerSwipeTime:null,
     filterContestType:[{'name':'专业竞赛','sele':true},{'name':'创新创业','sele':true},{'name':'语言竞赛','sele':true}],
     filterYearType:[{'name':'大一','sele':true},{'name':'大二','sele':true},{'name':'大三','sele':true},{'name':'大四','sele':true},{'name':'研究生','sele':true},{'name':'实验室','sele':true}],
     filterYearCount:6,
@@ -152,24 +153,28 @@ this.setData({
    });
    this.setData({filterYearType:filter,filterYearCount:count});
   },
+  search:function(){
+    if(this.data.searching){//close searching window
+      this.resetSearching();
+      this.setData({
+        searchContestKeyWords:"",
+        searching:false
+      })
+    }
+    if(this.data.searchContestKeyWords!=""){
+      this.setData({
+        searching:true
+      });
+    this.searchContest();
+    }
+  },
   //输入搜索关键词
   inputSearch:function(input){
     const keyWord = input.detail.value;
     this.setData({
       searchContestKeyWords:keyWord
     });
-    if(keyWord==""){
-      this.setData({
-        searching:false
-      });
-    }else{
-      this.setData({
-        searching:true
-      });
-this.searchContest();
-    }
-  }
-  ,
+    },
   //搜索页面
   searchContest:function(){
 const keyWord = this.data.searchContestKeyWords;
@@ -219,5 +224,72 @@ this.setData({
       })
     }
 
-  }
+  },
+  drawerWindowTouchStart: function (e) {
+    var touchStartX = e.touches[0].pageX;
+    var touchStartY = e.touches[0].pageY;
+    this.data.modalSwipeTouchStartX=touchStartX;
+    this.data.modalSwipeTouchStartY=touchStartY;
+    this.data.drawerSwipeEndX = touchStartX;
+      this.data.drawerSwipeEndY = touchStartY;
+    this.data.drawerSwipeTime = Date.now();
+    },
+    drawerWindowTouchMove:function(e){
+      this.data.drawerSwipeEndX = e.touches[0].pageX;
+      this.data.drawerSwipeEndY = e.touches[0].pageY;
+    },
+    drawerWindowTouchEnd: function (e) {
+    var moveX =  this.data.drawerSwipeEndX - this.data.modalSwipeTouchStartX;
+    var moveYabs = Math.abs(this.data.drawerSwipeEndY - this.data.modalSwipeTouchStartY);
+    let time = (Date.now()-this.data.drawerSwipeTime)/1000;
+     if (moveX <= -30 && time < 0.8&&moveYabs<80) {
+     this.setData({
+       showDrawer:false
+     });
+     }
+    },
+    modifyFilterReverse:function(){
+      var flag = false;
+      this.data.filterContestType.forEach(e=>{
+        if(!flag&&e.sele){
+          this.modifyFilterClearAll();
+          flag=true;
+          return;
+        }
+      });
+      if(!flag){
+      this.data.filterYearType.forEach(e=>{
+        if(flag&&e.sele){
+          this.modifyFilterClearAll();
+          flag=true;
+          return;
+        }
+      });}
+      if(!flag)
+      this.modifyFilterSeleAll();
+    },
+    modifyFilterClearAll:function(){//重置所有过滤条件
+     this.data.filterContestType.forEach(e=>{
+       e.sele=false;
+     });
+     this.data.filterYearType.forEach(e=>{
+       e.sele=false;
+     })
+     this.setData({
+    filterContestType:this.data.filterContestType,
+    filterYearType:this.data.filterYearType
+     });
+    },
+    modifyFilterSeleAll:function(){//选中所有过滤条件
+     this.data.filterContestType.forEach(e=>{
+       e.sele=true;
+     });
+     this.data.filterYearType.forEach(e=>{
+       e.sele=true;
+     })
+     this.setData({
+    filterContestType:this.data.filterContestType,
+    filterYearType:this.data.filterYearType
+     });
+    }
 })

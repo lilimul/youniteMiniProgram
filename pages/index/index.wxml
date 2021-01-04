@@ -10,7 +10,7 @@
 				<view class="fake-search-form">
 					<text class="cuIcon-search" style="margin-right:15rpx;margin-left:15rpx;"></text>
 					<input type="text" placeholder="{{searchHolder}}" confirm-type="search" bindinput="inputSearch" value="{{searchContestKeyWords}}"></input>
-					<view class="searchBtn" bindtap="resetSearching">{{searching?"关闭":"搜索"}}</view>
+					<view class="searchBtn" bindtap="search">{{searching?"关闭":"搜索"}}</view>
 				</view>
 			</view>
 			<!-- <view class="cu-bar bg-white search" style="top:0px;">
@@ -153,13 +153,14 @@
 </scroll-view>
 <!--The left drawer on left side-->
 <view class="DrawerClose {{showDrawer?'show':''}}" bindtap="hideDrawer">
-	<text class="cuIcon-pullright"></text>
 </view>
-<scroll-view scroll-y class="DrawerWindow {{showDrawer?'show':''}}">
+<scroll-view scroll-y class="DrawerWindow {{showDrawer?'show':''}}" bindtouchstart="drawerWindowTouchStart"
+bindtouchend="drawerWindowTouchEnd" bindtouchmove="drawerWindowTouchMove">
 	<div class="bar"> <text class="title">筛选</text>
 		<div class="action" bindtap="applyDrawer">应用</div>
 	</div>
 	<div class="infoBar">设置比赛意向，会按照你的要求筛选比赛项目</div>
+	<div bindtap="modifyFilterReverse" class="labelFilter reset">反选</div>
 	<div class="titleBanner">竞赛类型（可多选）</div>
 	<div class="slector"></div>
 	<div class="labelBox">

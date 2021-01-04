@@ -53,7 +53,7 @@
 		<view class="resume-publish-title">
 			<view class="info">
 				<view class="title text-xl text-bold">简历发布</view>
-				<view class="time">发布时间：2020.8.12 13:00</view>
+				<view class="time">发布时间：{{resumeInfo.lastPublishTime}}</view>
 			</view>
 			<view class="status text-green">
 				<text class="cuIcon-punch"></text>
@@ -63,7 +63,7 @@
 		<view class="resume-publish-counter">
 			<view class="item">
 				<view class="count">
-					15
+					{{resumeInfo.viewCount}}
 				</view>
 				<view class="discribe">
 					<text class="cuIcon-attentionfill text-grey "></text>浏览量
@@ -72,7 +72,7 @@
 			<view class="bar"></view>
 			<view class="item">
 				<view class="count">
-					8
+					{{resumeInfo.inviteCount}}
 				</view>
 
 				<view class="discribe">
@@ -82,7 +82,7 @@
 			<view class="bar"></view>
 			<view class="item">
 				<view class="count">
-					2
+					{{resumeInfo.inCommuCount}}
 				</view>
 				<view class="discribe">
 					<text class="cuIcon-communityfill text-grey"></text>沟通中
