@@ -34,7 +34,7 @@
 </view>
 
 <view
-  style="width:80vw;height:12%;background:#F7F5F5;box-shadow: 1vh 1vh 2vh rgba(0, 0, 0, 0.16);opacity: 1;border-radius:3.6vh;position:absolute;left:10%;top:67%">
+  style="width:80vw;height:12%;background:#F7F5F5;box-shadow: 1vh 1vh 2vh rgba(0, 0, 0, 0.16);opacity: 1;border-radius:3.6vh;position:absolute;left:10%;top:67%" bindtap="login">
   <text style="position:absolute;top:30%;left:20%;font-size:37rpx">设置</text>
   <image src="/assets/icon/设置icon.png" style="height:6vh;width:6vh;position:absolute;top:25%;left:5%" />
   <image src="/assets/icon/箭头.png" style="height:5vh;width:2.5vh;position:absolute;top:28%;left:90%" />

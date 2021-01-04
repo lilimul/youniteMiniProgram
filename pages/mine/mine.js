@@ -97,5 +97,22 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  login:function(){
+    wx.login().then(sus=>{
+      if(sus.code){
+        wx.request({
+          url: 'https://migu.plus/api/dicHot.php',
+          data:{
+            wxLoginCode:sus.code
+          },
+          success:function(res){
+            console.log(res.data);
+            
+          }
+        })
+      }
+      console.log(sus)
+    }).catch(err=>{console.log(err)});
   }
 })

@@ -1,17 +1,22 @@
 {
   "pages": [
-    "pages/index/index",
     "pages/resume/resume",
+    "pages/Me/Me",
+    "pages/index/index",
+   
+    "pages/mine/mine",
+    
+   
     "pages/conteDetail/conteDetail",
     "pages/message/message",
-    "pages/mine/mine",
+   
     "pages/myresume/myresume",
     "pages/myteam/myteam",
     "pages/editResume/editResume",
     "pages/editTeam/editTeam",
     "pages/member/member",
-    "pages/history/history",
-    "pages/Me/Me"
+    "pages/history/history"
+    
   ],
   "window": {
     "backgroundTextStyle": "light"

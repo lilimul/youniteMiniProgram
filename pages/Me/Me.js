@@ -15,7 +15,8 @@ Page({
       'QQ': '',
       'phone': ''
     },
-    imgUrl:null
+    imgUrl:null,
+    avatarModified:false
   },
   updateAvatar:function(){
     var that = this
@@ -45,7 +46,22 @@ Page({
       }
     })
   },
-
+uploadAvatar:function(){//上传头像到服务器
+wx.uploadFile({
+  filePath: this.data.imgUrl,
+  name: 'avatar',
+  url: 'url',//服务器接口
+  formData:{
+    sesssionToken:"demoToken"
+  },
+  success(res){
+    console.log(res);
+    this.setData({
+      avatarModified:true
+    });
+  }
+})
+},
   submitSelfInfo: function (e) {
     console.log(e)
     var mineInfo = e.detail.value
@@ -82,7 +98,9 @@ Page({
       // header: {
       //   'content-type': 'application/json'
       // },
-
+      // if(this.data.avatarModified==true){//如果头像有更改
+      //   this.uploadAvatar();
+      // }
     })
   },
 

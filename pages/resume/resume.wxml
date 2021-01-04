@@ -24,20 +24,20 @@
 		</view>
 		<view class="history-main">
 			<view class="timeline">
-				<view class="timeline-item">
+				<view class="timeline-item" wx:for="{{eduHistories}}" wx:for-item="eduHistory" wx:key="id">
 					<view class="content">
 						<text class="round"></text>
-						<text class="time">2012.9-2016.6</text>
+						<text class="time">{{eduHistory.start}}-{{eduHistory.end}}</text>
 						<view class="timeline-item-card">
 							<view class="timeline-item-card-info">
-								武汉大学 | 本科
+								{{eduHistory.school}} | {{eduHistory.grade}}
 							</view>
 							<view class="timeline-item-card-subinfo">
 								<view>
-									主修专业：新闻与传播专业 传播学
+									主修专业：{{eduHistory.academy}}-{{eduHistory.major}}
 								</view>
 								<view>
-									在校经历：担任班长</view>
+									在校经历：{{eduHistory.history}}</view>
 							</view>
 						</view>
 					</view>
