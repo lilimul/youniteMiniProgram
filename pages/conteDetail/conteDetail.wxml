@@ -11,12 +11,12 @@
 	</view>
 	<view class="divider"></view>
 	<view class="conteSnack">
+		<view class="remainText">剩余人数：2人</view>
 		<div class="labelBox">
 			<div class="labelFilter">国创项目</div>
 			<div class="labelFilter">商科</div>
 			<div class="labelFilter">计算机</div>
 		</div>
-		<view class="remainText">剩余人数：2人</view>
 	</view>
 	<view class="captanCard">
 		<view class="avatar">

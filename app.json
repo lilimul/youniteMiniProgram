@@ -1,16 +1,11 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/conteDetail/conteDetail",
     "pages/resume/resume",
     "pages/Me/Me",
-   
-   
     "pages/mine/mine",
-    
-   
-    "pages/conteDetail/conteDetail",
     "pages/message/message",
-   
     "pages/myresume/myresume",
     "pages/myteam/myteam",
     "pages/editResume/editResume",

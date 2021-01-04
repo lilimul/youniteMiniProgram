@@ -6,7 +6,7 @@
 				<view slot="content">YOUnite</view>
 			</cu-custom>
 			<view class="fake-searchBox">
-				<div style="left:10px;" bindtap="showDrawer" id="filterBtn"><text class="cuIcon-filter"></text></div>
+				<div bindtap="showDrawer" id="filterBtn"><text class="cuIcon-filter"></text></div>
 				<view class="fake-search-form">
 					<text class="cuIcon-search" style="margin-right:15rpx;margin-left:15rpx;"></text>
 					<input type="text" placeholder="{{searchHolder}}" confirm-type="search" bindinput="inputSearch" value="{{searchContestKeyWords}}"></input>

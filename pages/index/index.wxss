@@ -19,6 +19,17 @@ background-color: rgb(109, 106, 239);
 .cu-bar{
   border-radius: 0 0 15px 15px;
 }
+#filterBtn::after{
+  content: "筛选";
+  position: absolute;
+  font-size:0.4em;
+  background-color: whitesmoke;
+  color:gray;
+  padding:3rpx 10rpx 3rpx 10rpx; 
+  border-radius: 15rpx;
+  top:-15rpx;
+  right:-27rpx;
+}
 .search-form {
   position: relative;
 }
@@ -372,8 +383,9 @@ font-family: YouYuan;
 }
 #filterBtn{
   color: white;
-  margin-right: 15rpx;
+  margin-right: 20rpx;
   font-size: 50rpx;
+  position: relative;
 }
 .fake-background{
   background-color: #6D6AEF;
