@@ -18,6 +18,7 @@ Page({
       teamRequire: '',
       teamNumber: '',
       endDate: '',
+      endTime:''
       // name: wx.getStorageSync('myInfo').name,
       // grade: wx.getStorageSync('myInfo').grade,
       // college: wx.getStorageSync('myInfo').college,
@@ -45,6 +46,13 @@ Page({
     var date = "teamInfo.endDate"
     this.setData({
       [date]: e.detail.value
+    })
+  },
+  TimeChange(e) {
+    console.log(e)
+    var time = "teamInfo.endTime"
+    this.setData({
+      [time]: e.detail.value
     })
   },
   switchChage: function (e) {

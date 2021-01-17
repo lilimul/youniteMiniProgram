@@ -59,7 +59,7 @@
 		bindtap="confirmDeleTeam">从队伍信息中撤回招募</button>
 </view>
 <!--Comfirm modal:Dele team?-->
-<view class="cu-modal bottom-modal {{currentModal=='ModalDeleTeam'&&showModal?'show':''}}">
+<!-- <view class="cu-modal bottom-modal {{currentModal=='ModalDeleTeam'&&showModal?'show':''}}">
 	<view class="cu-dialog">
 		<view class="cu-bar bg-white">
 			<view class="action text-green" bindtap="hideModal">取消</view>
@@ -69,4 +69,24 @@
 			删除队伍信息会自动删除相关的邀请关系，且不能撤回，确定要继续删除吗？
 		</view>
 	</view>
+</view> -->
+
+<view class="cu-modal {{currentModal=='ModalDeleTeam'&&showModal?'show':''}}">
+  <view class="cu-dialog">
+    <view class="cu-bar bg-white justify-end">
+      <view class="content">删除队伍</view>
+      <view class="action" bindtap="hideModal">
+        <text class="cuIcon-close text-red"></text>
+      </view>
+    </view>
+    <view class="padding-xl">
+		删除队伍信息会自动删除相关的邀请关系，且不能撤回，确定要继续删除吗？
+	</view>
+    <view class="cu-bar bg-white justify-end">
+      <view class="action">
+        <button class="cu-btn line-green text-green" bindtap="hideModal">取消</button>
+        <button class="cu-btn bg-green margin-left" bindtap="startDeleTeam">确定</button>
+      </view>
+    </view>
+  </view>
 </view>

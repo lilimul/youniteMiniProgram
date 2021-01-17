@@ -3,10 +3,12 @@
     <view class="column">
 
       <view bindtap="updateAvatar">
-        <image class="userinfo-avatar"
-          style="margin-left:200rpx; " src='{{imgUrl}}'>
-        </image>
-
+        <view class="flex">
+          <image  wx:if="{{imgUrl}}" class="userinfo-avatar" style="justify-content:center" src='{{imgUrl}}'>
+          </image>
+          <image wx:else class="userinfo-avatar" style="justify-content:center" src='/assets/icon/我的icon.png'>
+          </image>
+        </view>
         <view class="flex" style="padding:10rpx ">
           <button data-text="上传头像" class="cu-btn lg shadow padding " role="button" aria-disabled="false"
             style="height: 60rpx;width:40vw;border-radius:1.5vh;justify-content:center;background:#A9A8EC;color:white;">上传头像</button>
@@ -38,7 +40,9 @@
     </view>
 
   </view>
-
+  <view class="rowCenter" style="margin-left:30px;color:white;font-size:30rpx">
+    *只有匹配成功后，您的联系方式才会向对方展示
+  </view>
   <view class="mainContent resume-publish padding  shadow-warp row rowCenter">
     <view class="column">
 
@@ -61,9 +65,6 @@
       </view>
 
     </view>
-  </view>
-  <view class="rowCenter" style="margin-left:30px;color:white;font-size:30rpx">
-    *只有匹配成功后，您的资料才会向对方展示
   </view>
 
   <button form-type="submit" class="cu-btn lg shadow" role="button" aria-disabled="false"

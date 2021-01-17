@@ -49,10 +49,13 @@ flex-direction: column;
   border-radius: 9rpx;
   padding: 5rpx 15rpx;
 }
+.flex{
+  display: flex;
+  justify-content: center;
+}
 
 .userinfo-avatar {
   width: 128rpx;
   height: 128rpx;
-  margin: 20rpx;
   border-radius: 50%;
 }
