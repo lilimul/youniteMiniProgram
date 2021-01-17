@@ -6,7 +6,6 @@ Page({
    */
   data: {
     myInfo: {
-      'id':'',
       'name': '',
       'college': '',
       'grade': '',
@@ -15,26 +14,25 @@ Page({
       'QQ': '',
       'phone': ''
     },
-    imgUrl:null,
-    avatarModified:false
+    imgUrl: null
   },
-  updateAvatar:function(){
+  updateAvatar: function () {
     var that = this
     wx.chooseImage({
       count: 1,
       sizeType: ['original', 'compressed'],
       sourceType: ['album'],
-      success (res) {
+      success(res) {
         // tempFilePath可以作为img标签的src属性显示图片
         const tempFilePaths = res.tempFilePaths
         wx.saveFile({
           tempFilePath: tempFilePaths[0],
-          success (res) {
+          success(res) {
             const savedFilePath = res.savedFilePath
             wx.setStorageSync('imgUrl', savedFilePath)
             that.setData({
-                imgUrl:savedFilePath
-              })
+              imgUrl: savedFilePath
+            })
           }
         })
         // wx.setStorageSync('imgUrl', tempFilePaths)
@@ -46,22 +44,7 @@ Page({
       }
     })
   },
-uploadAvatar:function(){//上传头像到服务器
-wx.uploadFile({
-  filePath: this.data.imgUrl,
-  name: 'avatar',
-  url: 'url',//服务器接口
-  formData:{
-    sesssionToken:"demoToken"
-  },
-  success(res){
-    console.log(res);
-    this.setData({
-      avatarModified:true
-    });
-  }
-})
-},
+
   submitSelfInfo: function (e) {
     console.log(e)
     var mineInfo = e.detail.value
@@ -98,9 +81,7 @@ wx.uploadFile({
       // header: {
       //   'content-type': 'application/json'
       // },
-      // if(this.data.avatarModified==true){//如果头像有更改
-      //   this.uploadAvatar();
-      // }
+
     })
   },
 
@@ -126,7 +107,7 @@ wx.uploadFile({
   onShow: function () {
     this.setData({
       myInfo: wx.getStorageSync('myInfo'),
-      imgUrl:wx.getStorageSync('imgUrl')
+      imgUrl: wx.getStorageSync('imgUrl')
     })
   },
 
