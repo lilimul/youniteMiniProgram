@@ -75,7 +75,26 @@ Page({
       scrollLeft: (e.currentTarget.dataset.id-1)*60
     })
   },
-  onLoad: function () {},
+  onLoad: function () {
+    wx.request({
+      url: app.globalData.apiAllContest,
+      success:res=>{
+        let data  = res.data.data
+        data  = data.map(cont=>{
+          return {
+            name:cont.G_name,
+            discript:cont.G_discript,
+            type:cont.type,
+            ddl:cont.time,
+            time:[1],
+            hide:false
+          }
+        })
+        console.log(data)
+        this.setData({contests:data})
+      }
+    })
+  },
   switch1: function () {
     this.setData({
       isswitched: false,
@@ -152,6 +171,9 @@ this.setData({
      }
    });
    this.setData({filterYearType:filter,filterYearCount:count});
+  },
+  debug:function(){
+
   },
   search:function(){
     if(this.data.searching){//close searching window

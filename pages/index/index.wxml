@@ -52,7 +52,7 @@
 								</view>
 							</view>
 							<view class="homeMainTeamCardActionBarBtn">
-								<button style="background-color:#6D6AEF;color:white;" class="cu-btn shadow-blur round">查看详情</button>
+								<button style="background-color:#6D6AEF;color:white;" class="cu-btn shadow-blur round" bindtap="debug">查看详情</button>
 							</view>
 						</view>
 					</view>

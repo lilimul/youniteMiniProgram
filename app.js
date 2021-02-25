@@ -12,6 +12,7 @@ App({
   console.log("Hi!");
   },
   globalData: {
-    userInfo: null
+    userInfo: null,
+    apiAllContest:'http://byu7983780001.my3w.com/phalapi/public/?s=App.SPAPI.GameALLInfo'
   }
 })
