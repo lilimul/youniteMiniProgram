@@ -1,5 +1,4 @@
 const app = getApp()
-
 Page({
   data: {
     eduHistories:[
@@ -22,5 +21,20 @@ Page({
       status:1//1:发布中
     }
   },
-  onLoad: function () {}
+  onLoad: function () {
+    wx.request({
+      url: app.globalData.apiPallInfo,
+      success:res=>{
+      //  data = res.data.data
+      //   data  = data.map(cont=>{
+      //     return {
+      //       name:cont.G_name,
+      //       discript:cont.G_discript,
+      //       type:cont.type,
+      //       ddl:cont.time,
+      //       time:[1],
+      //       hide:false
+          }
+        })
+  }
 })

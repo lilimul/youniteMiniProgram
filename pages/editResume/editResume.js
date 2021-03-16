@@ -34,7 +34,7 @@ Page({
 
     wx.request({
       method: "POST",
-      url: "http://byu7983780001.my3w.com/phalapi/public/?s=App.SPAPI.CreatNewPersonCV",
+      url: "http://byu7983780001.my3w.com/phalapi/public/?s=App.SPAPI.UpdateCV",
       data: {
         'CV_title': resumeInformation.resumeTitle,
         'CV_Wish1': resumeInformation.yiyuan1,
@@ -43,6 +43,8 @@ Page({
         // 'shetuanExperience':resumeInformation.shetuanExperience,
         'CV_Pexperience': resumeInformation.projectExperience,
         'CV_Iexperience': resumeInformation.shixiExperience,
+        "CV_Sexperience": null,
+        "CV_LastPubilshTime": new Date()
       },
       header: {
         'content-type': 'application/x-www-form-urlencoded'

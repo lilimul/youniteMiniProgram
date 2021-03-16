@@ -1,4 +1,5 @@
 // pages/myteam/myteam.js
+const app = App()
 Page({
 
   /**
@@ -52,7 +53,17 @@ Page({
   //Start dele
   startDeleTeam: function () {
     console.log("[Todo] Here will dele current team.");
-    //回调this.hidemodal();
+    wx.request({
+      url: app.globalData.apiDeleTeam,
+      data:{
+        T_ID:0,
+        T_isrec:''
+      },
+      success:res=>{
+      console.log(res)
+      console.log("[Todo] Here will start loading all team names.");}
+      })
+   this.hidemodal();
   },
   //hide all modal
   hideModal: function () {
@@ -78,11 +89,29 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.setData({
-      
-    })
-    console.log("[Todo] Here will start loading all team names.");
-  },
+    wx.request({
+      url: app.globalData.apiTeamNum,
+      success:res=>{
+      // let data = res.data.data
+      //   data  = data.map(teamInfo=>{
+      //     return {
+      //       "tName": "队伍标题",
+      //       "tId": 0,
+      //       "tView": 15,
+      //       "tInvite": 8,
+      //       "tContact": 2,
+      //       "tInvited": 3,
+      //       "tRemain": 0,
+      //       "tLastUpdate": wx.getStorageSync('editTeamDate')
+      //     }
+      //   })
+      //   this.setData({
+      //     teamInfo:data
+      //   })
+        console.log("[Todo] Here will start loading all team names.");
+      }})}
+   
+,
 
   /**
    * 生命周期函数--监听页面初次渲染完成

@@ -76,10 +76,11 @@ Page({
     })
   },
   onLoad: function () {
+    let data ;
     wx.request({
       url: app.globalData.apiAllContest,
       success:res=>{
-        let data  = res.data.data
+       data = res.data.data
         data  = data.map(cont=>{
           return {
             name:cont.G_name,
@@ -92,6 +93,22 @@ Page({
         })
         console.log(data)
         this.setData({contests:data})
+        wx.request({
+          url: app.globalData.apiAllTalents,
+          success:res=>{
+            let dataTalents  = res.data.data
+            dataTalents  = dataTalents.map(talent=>{
+              return {
+                id:talent.P_ID,
+                name:talent.P_name,
+                slogan:talent.P_intro,
+                academy:1,
+                label:talent.P_intention,
+                hide:false
+              }
+            })
+            this.setData({talents:dataTalents})
+}});
       }
     })
   },

@@ -13,6 +13,11 @@ App({
   },
   globalData: {
     userInfo: null,
-    apiAllContest:'http://byu7983780001.my3w.com/phalapi/public/?s=App.SPAPI.GameALLInfo'
+    apiAllContest:'http://byu7983780001.my3w.com/phalapi/public/?s=App.SPAPI.GameALLInfo',
+    apiAllTalents:'http://byu7983780001.my3w.com/phalapi/public/?s=App.SPAPI.ALLofperson',
+    apiTeamPerson:'http://byu7983780001.my3w.com/phalapi/public/?s=App.SPAPI.TeamPerson',
+    apiPallInfo:'http://byu7983780001.my3w.com/phalapi/public/?s=App.SPAPI.PALLInfo',
+    apiTeamNum:'http://byu7983780001.my3w.com/phalapi/public/?s=App.SPAPI.Teamnum',
+    apiDeleTeam:'http://byu7983780001.my3w.com/phalapi/public/?s=App.SPAPI.ChangeTeamState'
   }
 })

@@ -1,4 +1,5 @@
 // pages/member/member.js
+const app = getApp()
 Page({
 
   /**
@@ -29,10 +30,20 @@ Page({
   onLoad: function (options) {
     var tInvited = "teamInfo.tInvited"
     var tRemain = "teamInfo.tRemain"
+    var tId = 0//
     this.setData({
       [tInvited]: options.tInvited,
       [tRemain]: options.tRemain?options.tRemain:0,
     })
+    wx.request({
+      url: app.globalData.apiTeamPerson,
+      data:{
+        T_ID:tId
+      },
+      success:res=>{
+       console.log(res)
+        }})
+
     for(var i=0;i<this.data.teamInfo.tInvited;i++){
       this.setData({
         teamMemberInfos: this.data.teamMemberInfos.concat({

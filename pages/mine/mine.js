@@ -99,16 +99,25 @@ Page({
 
   },
   login:function(){
+    let loginToken=null;
+    wx.getStorage({//获取本地缓存
+      key:"loginToken",
+      success:function(res){
+        loginToken=res.data
+      }})
+      if(loginToken){
+        return false
+      }
     wx.login().then(sus=>{
       if(sus.code){
         wx.request({
-          url: 'https://migu.plus/api/dicHot.php',
+          url: 'http://byu7983780001.my3w.com/phalapi/public/?s=App.SPAPI.Login',
           data:{
-            wxLoginCode:sus.code
+            JSCODE:sus.code
           },
           success:function(res){
             console.log(res.data);
-            
+            wx.setStorage({ key: 'loginToken', data: 'res.openId', })//TODO:登录返回的token不对
           }
         })
       }
