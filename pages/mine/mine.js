@@ -117,7 +117,7 @@ Page({
           },
           success:function(res){
             console.log(res.data);
-            wx.setStorage({ key: 'loginToken', data: 'res.openId', })//TODO:登录返回的token不对
+            // wx.setStorage({ key: 'loginToken', data: 'res.openId', })//TODO:登录返回的token不对
           }
         })
       }

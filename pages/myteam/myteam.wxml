@@ -9,7 +9,8 @@
 
 <button class="cu-btn bg-purple lg shadow" role="button" aria-disabled="false" style="border-radius:3vh;justify-content:right；position:absolute;top:4%;left:85%;font-size:28rpx;background:#A9A8EC;font-weight:400;color:white">添加</button> -->
 
-
+<view class="header-bg" >
+</view>
 <view style="position:absolute;top:15%;left:2%;">
 
 	<!--简历发布页面-->
