@@ -57,16 +57,23 @@ background-color: rgb(109, 106, 239);
   background-size: 100% 100%;
   background-color: #F7F5F5;
 }
-.homeMainTeamCard>.homeMainTeamCardTitile{
+.homeMainTeamCard>.homeMainTeamCardTitle{
   font-weight: bolder;
   font-size: 17px;
+  margin-left: 5px;
   max-width: 70%;
 }
-.homeMainTeamCard>.homeMainTeamCardSubTitile{
+.homeMainTeamCard>.homeMainTeamCardSubTitle{
   margin-top:6px;
   margin-left: 5px;
   word-wrap: break-word;
-  max-width:60%;
+  max-width:80%;
+}
+.homeMainTeamCard > .homeMainTeamCardDeadLine {
+	margin-top: 6px;
+	margin-left: 5px;
+	word-wrap: break-word;
+	max-width: 80%;
 }
 .homeMainTeamCardActionBar{
   padding: 5px 5px 5px 5px;

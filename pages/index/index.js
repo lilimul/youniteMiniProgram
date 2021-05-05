@@ -114,8 +114,8 @@ Page({
 			scrollLeft: (e.currentTarget.dataset.id - 1) * 60
 		})
 	},
-	onLoad: async function() {
-		await getCK.login();
+	// 获取所有比赛信息，apiAllContest
+	getAllContest: async function() {
 		let data;
 		wx.request({
 			url: app.globalData.apiAllContest,
@@ -135,27 +135,37 @@ Page({
 				this.setData({
 					contests: data
 				})
-				wx.request({
-					url: app.globalData.apiAllTalents,
-					success: res => {
-						let dataTalents = res.data.data
-						dataTalents = dataTalents.map(talent => {
-							return {
-								id: talent.P_ID,
-								name: talent.P_name,
-								slogan: talent.P_intro,
-								academy: 1,
-								label: talent.P_intention,
-								hide: false
-							}
-						})
-						this.setData({
-							talents: dataTalents
-						})
-					}
-				});
 			}
-		})
+		});
+	},
+	// 获取所有人才信息，apiAllTalents
+	getAllTalents: async function() {
+		wx.request({
+			url: app.globalData.apiAllTalents,
+			success: res => {
+				let dataTalents = res.data.data
+				dataTalents = dataTalents.map(talent => {
+					return {
+						id: talent.P_ID,
+						name: talent.P_name,
+						slogan: talent.P_intro,
+						academy: 1,
+						label: talent.P_intention,
+						hide: false
+					}
+				})
+				console.log(dataTalents);
+				this.setData({
+					talents: dataTalents
+				})
+			}
+		});
+	},
+	onLoad: async function() {
+		await getCK.login();
+		
+		this.getAllContest();
+		this.getAllTalents();
 	},
 	switch1: function() {
 		this.setData({
@@ -289,6 +299,7 @@ Page({
 
 	//发布队伍招募
 	newPostNextStep(btn) { //在首页发布页面的切换
+		// debugger;
 		const nextIndex = btn.currentTarget.dataset.nextindex;
 		this.setData({
 			newPostIndex: nextIndex

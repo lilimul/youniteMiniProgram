@@ -202,7 +202,7 @@ Page({
       },
       //成功回调函数
       success: res => {
-        this.messageList.received = res.data.data.TA_Received,
+        // this.messageList.received = res.data.data.TA_Received,
 
         console.log(res)
       },

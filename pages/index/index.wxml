@@ -66,6 +66,7 @@
 					<view class="homeMainTeamCardSubTitile">更多比赛强势来袭中...</view>
 				</view>
 			</view>
+			<!-- tab栏 -->
 			<scroll-view scroll-x class="nav tabNav">
 				<view class="flex text-center">
 					<view class="cu-item flex-sub {{0==TabCur?'text-purple cur':''}}" wx:key bindtap="tabSelect"
@@ -78,18 +79,20 @@
 					</view>
 				</view>
 			</scroll-view>
+			<!-- 比赛信息 -->
 			<view class="homeMainContent" wx-if="{{TabCur==0}}">
 				<view class="homeMainTeamCard padding" wx:for="{{contests}}" wx:for-item="contest" wx:key="index"
 					wx:if="{{!contest.hide}}">
-					<view class="homeMainTeamCardTitile">{{contest.name}}</view>
-					<view class="homeMainTeamCardSubTitile">{{contest.discript}}</view>
+					<view class="homeMainTeamCardTitle">{{contest.name}}</view>
+					<view class="homeMainTeamCardSubTitle">简介：{{contest.discript}}</view>
+					<view class="homeMainTeamCardDeadLine">截止日期：{{contest.ddl}}</view>
 					<view class="homeMainTeamCardActionBar">
 						<view class="homeMainTeamCardActionBarBadge">
 							<view class="miniBadge" style="background-color:#C9C9C9">
 								{{contestsType[contest.type]}}
 							</view>
 							<view class="miniBadge" style="background-color:#A9A8EC">
-								{{contestsType[contest.time[0]]}}
+								{{contestsTime[contest.time[0]]}}
 							</view>
 						</view>
 						<view class="homeMainTeamCardActionBarBtn">
@@ -99,11 +102,11 @@
 					</view>
 				</view>
 			</view>
-			<!--人才库-->
+			<!-- 人才库 -->
 			<view class="homeMainContent" wx-if="{{TabCur==1}}">
 				<view class="homeMainTeamCard padding" wx:for="{{talents}}" wx:for-item="talent" wx:key="index">
-					<view class="homeMainTeamCardTitile">{{talent.name}}</view>
-					<view class="homeMainTeamCardSubTitile">{{talent.slogan}}</view>
+					<view class="homeMainTeamCardTitle">{{talent.name}}</view>
+					<view class="homeMainTeamCardSubTitle">{{talent.slogan}}</view>
 					<view class="homeMainTeamCardActionBar">
 						<view class="homeMainTeamCardActionBarBadge">
 							<view class="miniBadge" style="background-color:#C9C9C9">
@@ -120,6 +123,7 @@
 					</view>
 				</view>
 			</view>
+			<!-- 发布栏 -->
 			<div class="newPostDrawer" wx-if="{{openNewPostDrawer}}" bindtap="triggleNewpostDrawer"
 				data-closeFrom="acrylic">
 				<!--index0 首页-->
@@ -175,12 +179,12 @@
 	<div class="slector"></div>
 	<div class="labelBox">
 		<div wx:for="{{filterContestType}}" class="labelFilter {{item.sele?'seleted':''}}" data-index="{{index}}"
-			wx:key="{{item.name}}" bindtap="modifyFilterByContestType">{{item.name}}</div>
+			wx:key="name" bindtap="modifyFilterByContestType">{{item.name}}</div>
 	</div>
 	<div class="titleBanner">年级要求（{{filterYearCount}}/{{filterYearType.length}}）</div>
 	<div class="slector"></div>
 	<div class="labelBox">
 		<div wx:for="{{filterYearType}}" class="labelFilter {{item.sele?'seleted':''}}" data-index="{{index}}"
-			wx:key="{{item.name}}" bindtap="modifyFilterByYearType">{{item.name}}</div>
+			wx:key="name" bindtap="modifyFilterByYearType">{{item.name}}</div>
 	</div>
 </scroll-view>

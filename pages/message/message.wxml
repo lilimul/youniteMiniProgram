@@ -1,107 +1,110 @@
 <cu-custom bgColor="purple" isBack="{{false}}">
-  <view></view>
-  <view slot="content">YOUnite</view>
+	<view></view>
+	<view slot="content">YOUnite</view>
 </cu-custom>
 <scroll-view scroll-x class="purple nav text-center">
-  <view class="cu-item {{index==TabCur?'text-white cur':''}}" wx:for="{{3}}" wx:key bindtap="tabSelect"
-    data-id="{{index}}">
-    {{index?picker[index]:'全部'}}
-  </view>
+	<view class="cu-item {{index==TabCur?'text-white cur':''}}" wx:for="{{3}}" wx:key="index" bindtap="tabSelect"
+		data-id="{{index}}">
+		{{index?picker[index]:'全部'}}
+	</view>
 </scroll-view>
 
 <view wx:if="{{TabCur == 0}}">
-  <view wx:for="{{messageList}}">
+	<view wx:for="{{messageList}}" wx:key="index">
 
-    <view class="mainContent resume-publish padding  shadow-warp row">
-      <view class="column">
-        <view class="row">
-          <text class="title" style="font-size:40rpx;font-weight:700">{{item.title}}</text>
-          <image src="/assets/icon/箭头.png" style="height:5vh;width:2.5vh;margin-left:100px" bindtap="navToDetail" />
-          <view class="homeMainTeamCardActionBar" style="position:absolute;left:83%">
-          </view>
-        </view>
-        <text class="title text-purple" style="font-size:35rpx;font-weight:700;">{{item.mode}}</text>
-        <text class="title" style="font-size:30rpx;font-weight:500">{{item.information}}</text>
-        <view class="flex" style="padding:10rpx">
-          <button bindtap="click1" data-text="{{item.btn1}}" class="cu-btn lg shadow padding " role="button"
-            aria-disabled="false"
-            style="height: 70rpx;width:70vw;border-radius:1.5vh;justify-content:center;background:#A9A8EC;color:white">{{item.btn1}}</button>
-        </view>
-        <view class="flex">
-          <button bindtap="click2" data-text="{{item.btn2}}" class="cu-btn lg shadow padding " role="button"
-            aria-disabled="false"
-            style="height: 70rpx;width:70vw;border-radius:1.5vh;justify-content:center;background:	#A9A8EC;color:white">{{item.btn2}}</button>
-        </view>
+		<view class="mainContent resume-publish padding  shadow-warp row">
+			<view class="column">
+				<view class="row">
+					<text class="title" style="font-size:40rpx;font-weight:700">{{item.title}}</text>
+					<image src="/assets/icon/箭头.png" style="height:5vh;width:2.5vh;margin-left:100px"
+						bindtap="navToDetail" />
+					<view class="homeMainTeamCardActionBar" style="position:absolute;left:83%">
+					</view>
+				</view>
+				<text class="title text-purple" style="font-size:35rpx;font-weight:700;">{{item.mode}}</text>
+				<text class="title" style="font-size:30rpx;font-weight:500">{{item.information}}</text>
+				<view class="flex" style="padding:10rpx">
+					<button bindtap="click1" data-text="{{item.btn1}}" class="cu-btn lg shadow padding " role="button"
+						aria-disabled="false"
+						style="height: 70rpx;width:70vw;border-radius:1.5vh;justify-content:center;background:#A9A8EC;color:white">{{item.btn1}}</button>
+				</view>
+				<view class="flex">
+					<button bindtap="click2" data-text="{{item.btn2}}" class="cu-btn lg shadow padding " role="button"
+						aria-disabled="false"
+						style="height: 70rpx;width:70vw;border-radius:1.5vh;justify-content:center;background:	#A9A8EC;color:white">{{item.btn2}}</button>
+				</view>
 
-      </view>
-    </view>
+			</view>
+		</view>
 
 
-  </view>
+	</view>
 </view>
 
 <view wx:if="{{TabCur == 1}}">
 
-   <view wx:for="{{messageList}}">
-    <view wx:if="{{item.received ==0}}">
-    <view class="mainContent resume-publish padding  shadow-warp row">
-      <view class="column">
-        <view class="row">
-          <text class="title" style="font-size:40rpx;font-weight:700">{{item.title}}</text>
-          <image src="/assets/icon/箭头.png" style="height:5vh;width:2.5vh;margin-left:100px" bindtap="navToDetail" />
-          <view class="homeMainTeamCardActionBar" style="position:absolute;left:83%">
-          </view>
-        </view>
-        <text class="title text-purple" style="font-size:35rpx;font-weight:700;">{{item.mode}}</text>
-        <text class="title" style="font-size:30rpx;font-weight:500">{{item.information}}</text>
-        <view class="flex" style="padding:10rpx">
-          <button bindtap="click1" data-text="{{item.btn1}}" class="cu-btn lg shadow padding " role="button"
-            aria-disabled="false"
-            style="height: 70rpx;width:70vw;border-radius:1.5vh;justify-content:center;background:#A9A8EC;color:white">{{item.btn1}}</button>
-        </view>
-        <view class="flex">
-          <button bindtap="click2" data-text="{{item.btn2}}" class="cu-btn lg shadow padding " role="button"
-            aria-disabled="false"
-            style="height: 70rpx;width:70vw;border-radius:1.5vh;justify-content:center;background:	#A9A8EC;color:white">{{item.btn2}}</button>
-        </view>
+	<view wx:for="{{messageList}}">
+		<view wx:if="{{item.received ==0}}">
+			<view class="mainContent resume-publish padding  shadow-warp row">
+				<view class="column">
+					<view class="row">
+						<text class="title" style="font-size:40rpx;font-weight:700">{{item.title}}</text>
+						<image src="/assets/icon/箭头.png" style="height:5vh;width:2.5vh;margin-left:100px"
+							bindtap="navToDetail" />
+						<view class="homeMainTeamCardActionBar" style="position:absolute;left:83%">
+						</view>
+					</view>
+					<text class="title text-purple" style="font-size:35rpx;font-weight:700;">{{item.mode}}</text>
+					<text class="title" style="font-size:30rpx;font-weight:500">{{item.information}}</text>
+					<view class="flex" style="padding:10rpx">
+						<button bindtap="click1" data-text="{{item.btn1}}" class="cu-btn lg shadow padding "
+							role="button" aria-disabled="false"
+							style="height: 70rpx;width:70vw;border-radius:1.5vh;justify-content:center;background:#A9A8EC;color:white">{{item.btn1}}</button>
+					</view>
+					<view class="flex">
+						<button bindtap="click2" data-text="{{item.btn2}}" class="cu-btn lg shadow padding "
+							role="button" aria-disabled="false"
+							style="height: 70rpx;width:70vw;border-radius:1.5vh;justify-content:center;background:	#A9A8EC;color:white">{{item.btn2}}</button>
+					</view>
 
-      </view>
-    </view>
-    </view>
+				</view>
+			</view>
+		</view>
 
-  </view>
+	</view>
 
 </view>
 
 <view wx:if="{{TabCur == 2}}">
-  <view wx:for="{{messageList}}">
-    <view wx:if="{{item.received ==1}}">
-    <view class="mainContent resume-publish padding  shadow-warp row">
-      <view class="column">
-        <view class="row">
-          <text class="title" style="font-size:40rpx;font-weight:700">{{item.title}}</text>
-          <image src="/assets/icon/箭头.png" style="height:5vh;width:2.5vh;margin-left:100px" bindtap="navToDetail" />
-          <view class="homeMainTeamCardActionBar" style="position:absolute;left:83%">
-          </view>
-        </view>
-        <text class="title text-purple" style="font-size:35rpx;font-weight:700;">{{item.mode}}</text>
-        <text class="title" style="font-size:30rpx;font-weight:500">{{item.information}}</text>
-        <view class="flex" style="padding:10rpx">
-          <button bindtap="click1" data-text="{{item.btn1}}" class="cu-btn lg shadow padding " role="button"
-            aria-disabled="false"
-            style="height: 70rpx;width:70vw;border-radius:1.5vh;justify-content:center;background:#A9A8EC;color:white">{{item.btn1}}</button>
-        </view>
-        <view class="flex">
-          <button bindtap="click2" data-text="{{item.btn2}}" class="cu-btn lg shadow padding " role="button"
-            aria-disabled="false"
-            style="height: 70rpx;width:70vw;border-radius:1.5vh;justify-content:center;background:	#A9A8EC;color:white">{{item.btn2}}</button>
-        </view>
+	<view wx:for="{{messageList}}">
+		<view wx:if="{{item.received ==1}}">
+			<view class="mainContent resume-publish padding  shadow-warp row">
+				<view class="column">
+					<view class="row">
+						<text class="title" style="font-size:40rpx;font-weight:700">{{item.title}}</text>
+						<image src="/assets/icon/箭头.png" style="height:5vh;width:2.5vh;margin-left:100px"
+							bindtap="navToDetail" />
+						<view class="homeMainTeamCardActionBar" style="position:absolute;left:83%">
+						</view>
+					</view>
+					<text class="title text-purple" style="font-size:35rpx;font-weight:700;">{{item.mode}}</text>
+					<text class="title" style="font-size:30rpx;font-weight:500">{{item.information}}</text>
+					<view class="flex" style="padding:10rpx">
+						<button bindtap="click1" data-text="{{item.btn1}}" class="cu-btn lg shadow padding "
+							role="button" aria-disabled="false"
+							style="height: 70rpx;width:70vw;border-radius:1.5vh;justify-content:center;background:#A9A8EC;color:white">{{item.btn1}}</button>
+					</view>
+					<view class="flex">
+						<button bindtap="click2" data-text="{{item.btn2}}" class="cu-btn lg shadow padding "
+							role="button" aria-disabled="false"
+							style="height: 70rpx;width:70vw;border-radius:1.5vh;justify-content:center;background:	#A9A8EC;color:white">{{item.btn2}}</button>
+					</view>
 
-      </view>
-    </view>
-  </view>
+				</view>
+			</view>
+		</view>
 
-  </view>
+	</view>
 
 
 </view>

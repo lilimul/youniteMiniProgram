@@ -1,5 +1,5 @@
 // pages/myteam/myteam.js
-const app = App()
+const app = getApp()
 Page({
 
   /**

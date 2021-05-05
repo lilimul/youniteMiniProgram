@@ -9,7 +9,7 @@ App({
         this.globalData.CustomBar = custom.bottom + custom.top - e.statusBarHeight;
       }
     });
-  console.log("Hi!");
+	console.log("Hi!");
   },
   globalData: {
     userInfo: null,

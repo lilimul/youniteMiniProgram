@@ -11,10 +11,10 @@
     style="width:18vw;height:18%;background:#A9A8EC;box-shadow: 1vh 1vh 2vh rgba(0, 0, 0, 0.16);opacity: 1;border-radius:3.6vh;position:absolute;left:30%;top:12%">
   </view> -->
 	<!-- <text style="position:absolute;top:13%;left:33%;font-size:35rpx;color:#FFFFFF">未命名</text> -->
-	<text style="position:absolute;top:35%;left:8%;font-size:35rpx">{{grade}}</text>
-	<text style="position:absolute;top:50%;left:8%;font-size:35rpx">{{college}}</text>
+	<text style="position:absolute;top:35%;left:8%;font-size:35rpx">年级：{{grade}}</text>
+	<text style="position:absolute;top:50%;left:8%;font-size:35rpx">学院：{{college}}</text>
 	<text style="position:absolute;top:65%;left:8%;font-size:35rpx">匹配次数：{{count}}次</text>
-	<input style="position:absolute;top:80%;left:6%;" placeholder="（自我介绍）" value="{{selfIntroduction}}" />
+	<text style="position:absolute;top:80%;left:8%;font-size:35rpx;">简介：{{selfIntroduction}}</text>
 </view>
 <view
 	style="width:80vw;height:12%;background:#F7F5F5;box-shadow: 1vh 1vh 2vh rgba(0, 0, 0, 0.16);opacity: 1;border-radius:3.6vh;position:absolute;left:10%;top:37%"
