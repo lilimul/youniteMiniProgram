@@ -2,38 +2,40 @@
   <view class="mainContent resume-publish padding  shadow-warp row rowCenter">
     <view class="column">
 
-      <view bindtap="updateAvatar">
-        <image class="userinfo-avatar"
+      <!-- <view bindtap="updateAvatar"> -->
+	  <view>
+        <!-- <image class="userinfo-avatar"
           style="margin-left:200rpx; " src='{{imgUrl}}'>
-        </image>
+        </image> -->
+		<image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" style="margin-left:200rpx;"></image>
 
-        <view class="flex" style="padding:10rpx ">
-          <button data-text="上传头像" class="cu-btn lg shadow padding " role="button" aria-disabled="false"
-            style="height: 60rpx;width:40vw;border-radius:1.5vh;justify-content:center;background:#A9A8EC;color:white;">上传头像</button>
+        <view class="flex" style="padding:10rpx" hidden="{{hasImg}}">
+          <button data-text="上传头像" class="cu-btn lg shadow padding " role="button" aria-disabled="false" bindtap="authorizeUserInfo" 
+            style="height: 60rpx;width:40vw;border-radius:1.5vh;justify-content:center;background:#A9A8EC;color:white;">点击授权</button>
         </view>
       </view>
       <view class="cu-form-group margin-top" style="min-height: 80rpx;">
         <view class="title">姓名</view>
         <input name="name" placeholder="请输入姓名" selection-start="-1" selection-end="-1" cursor="-1"
-          value="{{myInfo.name}}"></input>
+          value="{{userInfo.name}}"></input>
       </view>
 
       <view class="cu-form-group" style="min-height: 80rpx;">
         <view class="title">院系</view>
         <input name="college" placeholder="请输入学院名称" selection-start="-1" selection-end="-1" cursor="-1"
-          value="{{myInfo.college}}"></input>
+          value="{{userInfo.college}}"></input>
       </view>
 
       <view class="cu-form-group" style="min-height: 80rpx;">
         <view class="title">年级</view>
         <input name="grade" placeholder="请输入年级" selection-start="-1" selection-end="-1" cursor="-1"
-          value="{{myInfo.grade}}"></input>
+          value="{{userInfo.grade}}"></input>
       </view>
 
       <view class="cu-form-group" style="min-height: 80rpx;">
         <view class="title">自我介绍</view>
         <input name="selfIntroduction" placeholder="简单自我介绍一下吧~" selection-start="-1" selection-end="-1" cursor="-1"
-          value="{{myInfo.selfIntroduction}}"></input>
+          value="{{userInfo.selfIntroduction}}"></input>
       </view>
     </view>
 
@@ -45,19 +47,19 @@
       <view class="cu-form-group" style="min-height: 80rpx;">
         <view class="title">微信</view>
         <input name="wechat" placeholder="请输入微信号" selection-start="-1" selection-end="-1" cursor="-1"
-          value="{{myInfo.wechat}}"></input>
+          value="{{userInfo.wechat}}"></input>
       </view>
 
       <view class="cu-form-group" style="min-height: 80rpx;">
         <view class="title">QQ</view>
         <input name="QQ" placeholder="请输入QQ" selection-start="-1" selection-end="-1" cursor="-1"
-          value="{{myInfo.QQ}}"></input>
+          value="{{userInfo.QQ}}"></input>
       </view>
 
       <view class="cu-form-group" style="min-height: 80rpx;">
         <view class="title">联系电话</view>
         <input name="phone" placeholder="请输入联系电话" selection-start="-1" selection-end="-1" cursor="-1"
-          value="{{myInfo.phone}}"></input>
+          value="{{userInfo.phone}}"></input>
       </view>
 
     </view>
