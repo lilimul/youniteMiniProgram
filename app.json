@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/myteam/myteam",
     "pages/index/index",
     "pages/Me/Me",
     "pages/member/member",
@@ -8,7 +9,7 @@
     "pages/mine/mine",
     "pages/message/message",
     "pages/myresume/myresume",
-    "pages/myteam/myteam",
+    
     "pages/editResume/editResume",
     "pages/editTeam/editTeam",
     "pages/history/history"
