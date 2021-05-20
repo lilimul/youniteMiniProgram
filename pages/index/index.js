@@ -131,7 +131,7 @@ Page({
 						hide: false
 					}
 				})
-				console.log(data)
+				console.log('比赛信息', data)
 				this.setData({
 					contests: data
 				})
@@ -143,6 +143,7 @@ Page({
 		wx.request({
 			url: app.globalData.apiAllTalents,
 			success: res => {
+				// console.log(res);
 				let dataTalents = res.data.data
 				dataTalents = dataTalents.map(talent => {
 					return {
@@ -154,7 +155,7 @@ Page({
 						hide: false
 					}
 				})
-				console.log(dataTalents);
+				console.log('人才信息', dataTalents);
 				this.setData({
 					talents: dataTalents
 				})
